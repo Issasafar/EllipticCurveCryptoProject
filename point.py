@@ -47,6 +47,5 @@ class Point:
 
     def __repr__(self):
         if self.x is None:
-            return "Point(infinity)"
-        else:
-            return f"Point({self.x}, {self.y}) on Curve y^2 = x^3 + {self.a}x + {self.b}"
+            return "Point at Infinity"
+        return f"Point(x={self.x}, y={self.y}) on Curve y^2 = x^3 + {self.a}x + {self.b}"

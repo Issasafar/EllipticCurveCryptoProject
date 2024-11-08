@@ -31,7 +31,7 @@ class FiniteFieldElement:
         return self.value == other.value and self.prime == other.prime
 
     def __repr__(self):
-        return f"FiniteFieldElement({self.value}, {self.prime})"
+        return f"{self.value} (mod {self.prime})"
 
     def __neg__(self):
         """Returns the additive inverse of the element in the finite field."""
