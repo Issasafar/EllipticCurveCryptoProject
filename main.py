@@ -1,3 +1,5 @@
+import random
+
 from finite_field_element import FiniteFieldElement
 from helper import get_points_on_curve
 from point import Point
@@ -14,8 +16,10 @@ curve = EllipticCurve(a, b, prime)
 # Generate points on the curve
 points = get_points_on_curve(curve, prime)
 print("Points on the curve:")
+i = 0
 for point in points:
-    print(point)
+    print(f"Index {i}:  {point}")
+    i += 1
 
 generator_point = Point(FiniteFieldElement(15, prime), FiniteFieldElement(86, prime), a, b)
 n = 223  # Order of the generator point
