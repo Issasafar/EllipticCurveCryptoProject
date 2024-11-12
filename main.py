@@ -15,11 +15,6 @@ b = FiniteFieldElement(7, prime)
 curve = EllipticCurve(a, b, prime)
 # Generate points on the curve
 points = get_points_on_curve(curve, prime)
-print("Points on the curve:")
-i = 0
-for point in points:
-    print(f"Index {i}:  {point}")
-    i += 1
 
 generator_point = Point(FiniteFieldElement(15, prime), FiniteFieldElement(86, prime), a, b)
 n = 223  # Order of the generator point
@@ -35,7 +30,11 @@ print(f"Public key: {public_key}")
 
 # Encrypt a sample message (represented as a point)
 temp_point = Point(FiniteFieldElement(192, prime), FiniteFieldElement(105, prime), a, b)
-message_point = points[9]
+
+# Pick a random point on the curve as a message
+index = random.randint(0, len(points) - 1)
+message_point = points[index]
+
 c1, c2 = ecc.encrypt(public_key, message_point)
 print(f"\nOriginal message: {message_point}")
 print("\nEncrypted message:")

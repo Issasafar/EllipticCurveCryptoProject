@@ -39,4 +39,7 @@ class ECC:
 
     def decrypt(self, private_key, c1, c2):
         s = multiply(c1, private_key)
-        return c2 + Point(s.x, -s.y, s.a, s.b)
+        if s.y is None:
+            return c2 + Point(s.x, None, s.a, s.b)
+        else:
+            return c2 + Point(s.x, -s.y, s.a, s.b)

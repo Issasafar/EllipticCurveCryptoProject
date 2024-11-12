@@ -1,4 +1,3 @@
-from finite_field_element import FiniteFieldElement
 
 
 class EllipticCurve:
