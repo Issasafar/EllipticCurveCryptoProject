@@ -1,5 +1,3 @@
-from math import isqrt
-
 from finite_field_element import FiniteFieldElement
 from point import Point
 

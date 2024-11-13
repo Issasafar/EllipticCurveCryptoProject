@@ -1,7 +1,5 @@
 import random
-from finite_field_element import FiniteFieldElement
 from point import Point
-from elliptic_curve import EllipticCurve
 
 
 def multiply(point, scalar):
